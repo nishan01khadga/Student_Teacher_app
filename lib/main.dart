@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:student_tecaher_connection_app/Page/Welcome/welcome.dart';
+import 'package:student_tecaher_connection_app/Page/sign_in/sign_in.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -20,7 +21,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Welcome(),
+      initialRoute: "/",
+      routes: {
+        "/":(context)=>Welcome(),
+        "/SignIn":(context)=>const SignIn(),
+      },
+      //home:  Welcome(),// initial route "/"
     );
   }
 }

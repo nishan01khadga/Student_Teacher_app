@@ -1,3 +1,4 @@
+
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ final PageController _controller = PageController();
                          imagePath: "assets/images/fb ishan 7.jpg",
                          title: "First See Learning my tour",
                          subTitle:"Gosaikunda tour memory in my project ",
-                         index: 1,
+                         index: 1,context:context
                      ),
                      //second page
                      appOnboardingPage(
@@ -55,7 +56,7 @@ final PageController _controller = PageController();
                          imagePath: "assets/images/images (8).jpg",
                          title: "Second See Learning my tour",
                          subTitle:"Read Book in my project",
-                       index: 2,
+                       index: 2,context:context
                      ),
                      //third page
                      appOnboardingPage(
@@ -63,7 +64,7 @@ final PageController _controller = PageController();
                          imagePath: "assets/images/fb ishan 6.jpg",
                          title: "Third See Learning my tour",
                          subTitle:"Gosaikunda tour memory in my project",
-                       index: 3,
+                       index: 3,context:context
                      ),
                      //forth page
                      appOnboardingPage(
@@ -71,14 +72,14 @@ final PageController _controller = PageController();
                          imagePath: "assets/images/fb ishan 9.jpg",
                          title: "fourth See Learning my tour",
                          subTitle:"Pokhara tour memory in my project",
-                       index: 4,
+                       index: 4,context:context
                      ),
                      appOnboardingPage(
                        _controller,
                        imagePath: "assets/images/images (4).jpg",
                          title: "fourth See Learning Read book ",
                          subTitle:"Always keep in touch with your tutor and friend. Let's get connected",
-                       index: 5,
+                       index: 5 ,context:context
                      ),
 
                    ],
