@@ -3,20 +3,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:student_tecaher_connection_app/Page/Welcome/widgets.dart';
+import 'notifier/welcome_notifier.dart';
 
-import '../../common/widget/text_widget.dart';
-
-final indexProvider  = StateProvider<int>((ref) => 0);
+//final indexProvider  = StateProvider<int>((ref) => 0);
 
 class Welcome extends ConsumerWidget {
   Welcome({super.key});
 
 final PageController _controller = PageController();
-int dotsIndex = 0;
+//int dotsIndex = 0;
 
   @override
   Widget build(BuildContext context , WidgetRef ref) {
-    final index = ref.watch(indexProvider);
+
+    final index = ref.watch(welcome_notifierProvider);
 
     return  Container(
       color: Colors.white,
@@ -31,10 +31,10 @@ int dotsIndex = 0;
                // showing our three welcome pages
                 PageView(
                   onPageChanged: (value){
-                    print('$value');
+                   // print('$value');
 
-                    dotsIndex = value;
-                    ref.read(indexProvider.notifier).state=value;
+                   // dotsIndex = value;
+                    ref.read(welcome_notifierProvider.notifier).changeIndex(value);
 
                   },
                   controller: _controller,
@@ -52,9 +52,9 @@ int dotsIndex = 0;
                      //second page
                      appOnboardingPage(
                        _controller,
-                         imagePath: "assets/images/fb ishan 8.jpg",
+                         imagePath: "assets/images/images (8).jpg",
                          title: "Second See Learning my tour",
-                         subTitle:"Pokhara tour memory in my project",
+                         subTitle:"Read Book in my project",
                        index: 2,
                      ),
                      //third page
@@ -75,7 +75,7 @@ int dotsIndex = 0;
                      ),
                      appOnboardingPage(
                        _controller,
-                       imagePath: "assets/images/images (7).jpg",
+                       imagePath: "assets/images/images (4).jpg",
                          title: "fourth See Learning Read book ",
                          subTitle:"Always keep in touch with your tutor and friend. Let's get connected",
                        index: 5,

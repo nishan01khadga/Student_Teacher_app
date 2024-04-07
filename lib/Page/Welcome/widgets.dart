@@ -13,7 +13,7 @@ Widget appOnboardingPage(
     }){
   return Column(
     children: [
-      Image.asset(imagePath,fit:  BoxFit.fitWidth,),
+      Image.asset(imagePath, fit:  BoxFit.fitWidth,height: 400,width: 350, ),
       Container(
           margin: const EdgeInsets.only(top: 15),
           child: text24Normal(text: title),
@@ -46,7 +46,7 @@ Widget _nextButton(index, PageController controller){
           child: text16Normal(
               text: "next",
             color: Colors.white
-          ),
+          )
       ),
     ),
   );
