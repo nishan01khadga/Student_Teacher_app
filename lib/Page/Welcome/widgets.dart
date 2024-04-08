@@ -14,20 +14,22 @@ Widget appOnboardingPage(
       required BuildContext context,
 
     }){
-  return Column(
-    children: [
-      Image.asset(imagePath, fit:  BoxFit.fitWidth,height: 400,width: 350, ),
-      Container(
-          margin: const EdgeInsets.only(top: 15),
-          child: text24Normal(text: title),
-      ),
-      Container(
-          margin: const EdgeInsets.only(top: 15),
-          padding: const EdgeInsets.only(left: 30, right: 30),
-          child: text16Normal(text: subTitle),
-      ),
-     _nextButton(index, controller ,context),
-    ],
+  return SingleChildScrollView(
+    child: Column(
+      children: [
+        Image.asset(imagePath, fit:  BoxFit.fitWidth,height: 400,width: 350, ),
+        Container(
+            margin: const EdgeInsets.only(top: 15),
+            child: text24Normal(text: title),
+        ),
+        Container(
+            margin: const EdgeInsets.only(top: 15),
+            padding: const EdgeInsets.only(left: 30, right: 30),
+            child: text16Normal(text: subTitle),
+        ),
+       _nextButton(index, controller ,context),
+      ],
+    ),
   );
 }
 Widget _nextButton(index, PageController controller,BuildContext context){
