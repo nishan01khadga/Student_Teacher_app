@@ -1,17 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:student_tecaher_connection_app/Page/sign_up/notifier/register_notifier.dart';
 
 import '../../common/widget/app_bar.dart';
 import '../../common/widget/app_textfield.dart';
 import '../../common/widget/button_widget.dart';
 import '../../common/widget/text_widget.dart';
 import '../sign_in/widgets/sign_in_widget.dart';
-
-class SignUp extends StatelessWidget {
+import 'package:student_tecaher_connection_app/Page/sign_up/notifier/register_notifier.dart';
+class SignUp extends ConsumerWidget{
   const SignUp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+    final regProvider = ref.watch(registerNotifierProvider);
+
     return Container(
       color:  Colors.white,
       child:  SafeArea(
@@ -32,7 +36,8 @@ class SignUp extends StatelessWidget {
                   appTextField(
                       text: "User name",
                       iconName: "assets/icons/man_icon.png",
-                      hintText: "Enter your user name "
+                      hintText: "Enter your user name ",
+                    func:(value)=>print(value),
                   ),
                   const SizedBox(height: 20,),
 
@@ -40,7 +45,8 @@ class SignUp extends StatelessWidget {
                   appTextField(
                       text: "Email",
                       iconName: "assets/icons/man_icon.png",
-                      hintText: "Enter your email address "
+                      hintText: "Enter your email address ",
+                      func:(value)=>print(value),
                   ),
                   const SizedBox(height: 20,),
                   //password textField
@@ -48,6 +54,7 @@ class SignUp extends StatelessWidget {
                       text: "Password",
                       iconName: "assets/icons/password4.png",
                       hintText: "Enter your password",
+                      func:(value)=>print(value),
                       obscureText: true
                   ),
                   const SizedBox(height: 20,),
@@ -56,6 +63,7 @@ class SignUp extends StatelessWidget {
                       text: "Confirm Password",
                       iconName: "assets/icons/password4.png",
                       hintText: "Enter your Confirm password",
+                      func:(value)=>print(value),
                       obscureText: true
                   ),
                   const SizedBox(height: 20,),
@@ -66,13 +74,14 @@ class SignUp extends StatelessWidget {
                         text:"By creating an account you have to agree with our them & condication"),
                   ),
 
-                  const SizedBox(height: 20,),
+                  const SizedBox(height: 100,),
                   // app login button
                   Center(
                       child: appButton(
-                        buttonName: "Sign Up",
+                        buttonName: "Register",
                         isLogin: true,
                         context: context,
+
                       )
                   ),
                   // app register button

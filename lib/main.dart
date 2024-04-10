@@ -4,6 +4,8 @@ import 'package:student_tecaher_connection_app/Page/Welcome/welcome.dart';
 import 'package:student_tecaher_connection_app/Page/sign_in/sign_in.dart';
 import 'package:student_tecaher_connection_app/common/utils/app_styles.dart';
 
+import 'Page/sign_up/sign_up.dart';
+
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/":(context)=>Welcome(),
         "/SignIn":(context)=>const SignIn(),
+        "/register":(context)=> const SignUp(),
       },
       //home:  Welcome(),// initial route "/"
     );
