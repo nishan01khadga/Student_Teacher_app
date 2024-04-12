@@ -4,7 +4,7 @@ import 'package:student_tecaher_connection_app/common/widget/text_widget.dart';
 
 import '../utils/app_colors.dart';
 
-AppBar buildAppbar(){
+AppBar buildAppbar({String title=""}){
   return AppBar(
 
     bottom: PreferredSize(
@@ -14,7 +14,7 @@ AppBar buildAppbar(){
         height:1,
       ),
     ),
-    title: text16Normal(text: "Login",color:  AppColors.primaryText),
+    title: text16Normal(text: title, color:  AppColors.primaryText),
 
   );
 }

@@ -3,7 +3,7 @@ import 'package:student_tecaher_connection_app/Page/sign_in/widgets/sign_in_widg
 import 'package:student_tecaher_connection_app/common/widget/text_widget.dart';
 
 import '../../common/widget/app_bar.dart';
-import '../../common/widget/app_textfield.dart';
+import '../../common/widget/app_textfields.dart';
 import '../../common/widget/button_widget.dart';
 
 class SignIn extends StatelessWidget {
@@ -15,7 +15,7 @@ class SignIn extends StatelessWidget {
       color:  Colors.white,
       child:  SafeArea(
         child: Scaffold(
-          appBar:buildAppbar(),
+          appBar:buildAppbar(title: "Login"),
           backgroundColor: Colors.white,
           body: SingleChildScrollView(
             child: Column(
